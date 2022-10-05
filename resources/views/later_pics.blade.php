@@ -265,7 +265,7 @@ olark.identify('6935-124-10-4396');</script>
                         <div class="laterbox col-lg-4 text-center">
 
                             <a href="/"><img class="mt-4 later_logo" alt="Later Cam logo" src="https://s3.amazonaws.com/herman-cat/latercam.png"/></a>
-                            <h1>Album title</h1>
+                            <h1 style="padding-bottom:40px;">Album title</h1>
 
                             
                         </div>
@@ -278,18 +278,18 @@ olark.identify('6935-124-10-4396');</script>
 
                
 
-                <div class="d-flex justify-content-between px-5" style="background:#fff;padding-top:50px;">
+                <div class="d-flex justify-content-between px-5" style="background:#fff;padding-top:55px;">
                             <div style="width:33%" class="box1">
                                
                                 @for($i=0;$i<=count($photos);$i=$i+3)
-                                     <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" style="    padding: 20px 35px;width:100%; margin-bottom: 12px"/>
+                                     <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" style="    padding: 20px 18px;width:100%; margin-bottom: 12px"/>
                                    
                                   @endfor
                           </div>
 
                              <div style="width:33%" class="box2">
                                  @for($i=1;$i<=count($photos);$i=$i+3)
-                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="    padding: 20px 35px;width:100%; margin-bottom: 12px"/>
+                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="    padding: 20px 18px;width:100%; margin-bottom: 12px"/>
                                  
                                   
                                  @endfor
@@ -297,7 +297,7 @@ olark.identify('6935-124-10-4396');</script>
 
                              <div style="width:33%" class="box3">
                                  @for($i=2;$i<=count($photos);$i=$i+3)
-                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="    padding: 20px 35px;width:100%; margin-bottom: 12px"/>                                  
+                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="    padding: 20px 18px;width:100%; margin-bottom: 12px"/>                                  
                                   @endfor
                           </div>
 
