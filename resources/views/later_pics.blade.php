@@ -77,6 +77,9 @@
             #closeModel i{
               cursor: pointer;
             }
+            .rowImgs{
+              height:200px; margin-bottom: 12px;margin-right: 8px;
+            }
           </style>
 
           <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
@@ -275,7 +278,7 @@ olark.identify('6935-124-10-4396');</script>
 
                
 
-                <div class="d-flex justify-content-between px-5">
+                <!-- <div class="d-flex justify-content-between px-5">
                             <div style="width:33%" class="box1">
                                
                                 @for($i=0;$i<=count($photos);$i=$i+3)
@@ -298,7 +301,19 @@ olark.identify('6935-124-10-4396');</script>
                                   @endfor
                           </div>
 
-                    </div>
+                  </div> -->
+
+                   <div class="d-flex flex-wrap px-5">
+                          <!-- <div style="width:33%" class="box1"> -->
+                               
+                                @for($i=0;$i<=count($photos);$i++)
+                                     <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" class="rowImgs"/>
+                                   
+                                  @endfor
+                          <!-- </div> -->
+                           
+
+                  </div>
 
 
                     <div class="Img_wrapper">
