@@ -1,0 +1,57 @@
+// Base classes
+
+.bg-purple { background: $purple; }
+.bg-light-blue { background: #F4F9FF; }
+.bg-white { background: $white; }
+.bg-red { background: $red; }
+
+.white { color: $white; }
+.ghostwhite { color: $ghostwhite; }
+
+.gray-lightest { color: $gray-lightest; }
+.gray-lighter { color: $gray-lighter; }
+.gray-light { color: $gray-light; }
+.gray { color: $gray; }
+.gray-dark { color: $gray-dark; }
+.gray-darker { color: $gray-darker; }
+
+a.gray-lightest { @include link-hover($gray-lightest, 15%); }
+a.gray-light { @include link-hover($gray-light, 15%); }
+a.gray { @include link-hover($gray, 15%); }
+a.gray-dark { @include link-hover($gray-dark, 15%); }
+a.gray-darker { @include link-hover($gray-darker, 15%); }
+
+.semibold { font-weight: 600; }
+.bold { font-weight: 700; }
+.bolder { font-weight: 900; }
+.normal { font-weight: normal; }
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+
+.fs-xxl { font-size: $font-size-xxl; }
+.fs-xl { font-size: $font-size-xl; }
+.fs-lg { font-size: $font-size-lg; }
+.fs-base { font-size: $font-size-base; }
+.fs-sm { font-size: $font-size-sm; }
+.fs-xs { font-size: $font-size-xs; }
+
+.shadowed { box-shadow: 0 1px 4px 0 rgba(0,0,0,.15); }
+.rounded { @include border-radius(4px); }
+
+
+// Layout classes
+
+.white-box { color: #545454; border: 1px solid $gray-lighter; background: $white; @extend .py-4; @extend .px-4; @extend .rounded; }
+
+.table-rounded {
+    border-radius: 6px;
+    border-left:0px;
+    border: none;
+
+    th { border-top: none; }
+	th:first-child { border-radius: 6px 0 0 0; }
+	th:last-child { border-radius: 0 6px 0 0; }
+	th:only-child{ border-radius: 6px 6px 0 0; }
+	tr:last-child td:first-child { border-radius: 0 0 0 6px; }
+	tr:last-child td:last-child { border-radius: 0 0 6px 0; }
+}

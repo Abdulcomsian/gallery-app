@@ -1,0 +1,12 @@
+
+@mixin shadow($shadow, $shadow2:"") {
+	-webkit-box-shadow: $shadow, $shadow2;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin link-hover($color, $percentage) {
+	&:hover {
+		color: darken($color, $percentage);
+	}
+}

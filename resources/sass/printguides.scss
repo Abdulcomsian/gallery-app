@@ -1,0 +1,406 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:Regular,Bold");
+@import "bootstrap4/bootstrap";
+@import "variables";
+@import "mixins2";
+@import "classes";
+@import "shared";
+
+
+.later  p {
+  //color: white !important;
+}
+
+
+.btn-later {
+  border-radius: 0px;
+  color: white;
+  background-color: #FE07FC;
+  font: arial, sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 400px;
+  box-shadow: 10px 10px #9D98E7;
+  border: black 1px solid;
+  text-decoration: none !important;
+}
+
+
+
+body {
+	background: #fff;
+	font-family: 'Poppins', 'Open Sans', 'Arial', 'Sans Serif';
+	font-size: 18px;
+	margin-bottom: 200px;
+  margin-top: 50px;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: 100px;
+    visibility: hidden;
+}
+
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.2em;
+}
+
+.above_fold_scan {
+  width: 250px !important;
+}
+
+h1 {
+  //margin-top: 3em;
+  font-size: 2.8em;
+}
+
+.supporting {
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.explainer_text {
+  color: #9D9D9D;
+}
+
+.long_review {
+  width: 300px;
+  margin-bottom: 50px;
+  height: 100px;
+}
+
+.cheapest_shipping {
+  height: 80px;
+}
+
+.lab_location {
+  margin-top: 0.5em;
+}
+
+h2 {
+  margin-top: 2.5em;
+}
+
+h3 {
+  margin-top: 2em;
+  font-size: 2.2em;
+}
+
+.under_headline {
+  margin-top: 15px;
+}
+
+h4 {
+  font-size: 14px;
+  margin-top: 1em;
+  margin-bottom: 0.10em;
+}
+
+h5  {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0.15em;  
+  margin-top: 2em;
+}
+
+
+h5  {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0.15em;  
+  margin-top: 0.4em;
+}
+
+
+
+h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.85em;  
+
+}
+
+.search_result_name {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0.25em; 
+}
+
+.report_table_label {
+  width: 180px;
+  font-weight: bold;
+}
+
+.sticky-top-bar {
+    width: 100%;
+    background: #299EF2;
+    padding: 15px 30px;
+    float: left;
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+    text-align: center;
+    color: #ffffff;
+}
+
+
+.sticky-top-bar a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+p {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-width: 1px 0 0 1px;
+  margin: 0 0 1.75em;
+  table-layout: fixed;
+  /* Prevents HTML tables from becoming too wide */
+  width: 100%;
+}
+
+
+
+caption,
+th,
+td {
+  font-weight: normal;
+  text-align: left;
+}
+
+th {
+  border-width: 0 1px 1px 0;
+  font-weight: 700;
+}
+
+td {
+  border-width: 0 1px 1px 0;
+}
+
+th,
+td {
+  padding: 0.4375em;
+}
+
+tr:nth-child(even) {
+  border-bottom: 1px #f2f2f2;
+}
+
+
+
+
+.text-center {
+  text-align: center !important; 
+}
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+
+
+
+.scan {
+  width: 350px;
+  margin-bottom: 20px;
+}
+
+.envelope {
+  width: 500px;
+}
+
+.scan_container {
+  
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  
+}
+
+
+th, td {
+  text-align: left;
+  padding: 30px;
+}
+
+tr:nth-child(even) {background-color: #F6F6F6;}
+
+ #search {
+  width: 250px;
+ }
+
+#comparison_image {
+  width: 600px;
+}
+
+.lab_table {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.lab_comparison {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  background-color: rgb(197, 197, 197);
+  width: 150px;
+  height: 20px;
+  border-radius: 100vh;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.progress-filled {
+  border-radius: 100vh;
+  height: 100%;
+}
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: sans-serif;
+}
+
+
+@media only screen and (max-width: 1023px) {
+
+  .lab_table {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+
+  .scan {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  p {
+    width: 300px;
+  }
+
+   #search {
+    width: 180px;
+   }
+
+  #comparison_image {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 1.9em;
+  }
+
+  h2, h3 {
+    font-size: 1.6em;
+  }
+
+  .special_notes {
+    background-color: #FFBBBB !important;
+  }
+
+  #pitch {
+    font-size: 11px;
+  }
+
+  .responsive-table table, 
+  .responsive-table thead, 
+  .responsive-table tbody, 
+  .responsive-table th, 
+  .responsive-table td, 
+  .responsive-table tr {
+    display: block;
+  }
+  .responsive-table tr:first-child {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .responsive-table tr { border: none; }
+  .responsive-table td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 100px;
+    margin-left: 0px;
+    padding-top: 12px;
+  }
+  .responsive-table td:before {
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 50px;
+    padding-right: 40px;
+    white-space: nowrap;
+    margin-left: 0px;
+    font-weight: 600;
+  }
+
+  .responsive-table2 td {
+   
+    padding-left: 150px;
+   
+  }
+
+  .responsive-table td:nth-of-type(1):before { content: ""; }
+  .responsive-table td:nth-of-type(2):before { content: "Address"; }
+  .responsive-table td:nth-of-type(3):before { content: "Distance"; }
+  .responsive-table td:nth-of-type(4):before { content: "Quality"; }
+  .responsive-table td:nth-of-type(5):before { content: "Speed"; }
+  .responsive-table td:nth-of-type(6):before { content: "4x6 Price"; }
+  .responsive-table td:nth-of-type(7):before { content: "Finish"; }
+
+
+  tr:nth-child(even) {background-color: #ffffff;}
+  tr:nth-child(even) {
+    border-bottom: none;
+  }
+
+
+
+  .responsive-table td {
+    border: none;
+    border-bottom: none;
+
+  }
+
+  .lab_table td {
+   
+    padding-left: 150px;
+    
+  }
+
+  .compare_header {
+    margin-top: 25px;
+    font-size: 1.0em;
+    font-weight: bold;
+  }
+}
+
+
+/* table responsiveness fix */
