@@ -43,6 +43,40 @@
 
                   <style>
             @import  url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+            .swiper-slide img{
+              display: block;
+              margin: 0 auto;
+              height: 100%;
+            }
+            .Img_wrapper{
+              width: 100%;
+              height: 100%;
+              justify-content: center;
+              align-items: center;
+              background-color: #000;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: 999;
+              display: none;
+            }
+            #closeModel{
+              position: absolute;
+              top: 0;
+              right: 10px;
+              font-size: 2rem;
+              color: #fff;
+              cursor: pointer;
+              padding: 10px;
+              z-index: 99999;
+              transition: .2s;
+            }
+            #closeModel:hover{
+              transform: scale(1.1);
+            }
+            #closeModel i{
+              cursor: pointer;
+            }
           </style>
 
           <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
@@ -79,7 +113,9 @@ olark.identify('6935-124-10-4396');</script>
 
                   <link rel="stylesheet" href="/css/latercam.css?v=4">
 
-                
+                  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
 
                     <meta name="twitter:card" content="summary" />
@@ -135,7 +171,11 @@ olark.identify('6935-124-10-4396');</script>
               <meta name="msapplication-square310x310logo" content="/favicon/latercam/mstile-310x310.png" />
 
 
-            
+                    <!-- Link Swiper's CSS -->
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+          />
         
         
         
@@ -186,9 +226,6 @@ olark.identify('6935-124-10-4396');</script>
        <script type="text/javascript">
 
           $( document ).ready(function() {
-              
-
-              
 
                 var container = document.querySelector('#masonry-grid');
 
@@ -204,7 +241,8 @@ olark.identify('6935-124-10-4396');</script>
           });
           
         </script>
-      
+
+              
 
     </head>
     
@@ -235,45 +273,54 @@ olark.identify('6935-124-10-4396');</script>
                 </div>
 
 
-                
+               
 
-                
-                <div class="container">
-                    <div class="grid grid--fluid-5-col" id="masonry-grid">
+                <div class="d-flex justify-content-between px-5">
+                            <div style="width:33%" class="box1">
+                               
+                                @for($i=0;$i<=count($photos);$i=$i+3)
+                                     <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" style="width:100%; margin-bottom: 12px"/>
+                                   
+                                  @endfor
+                          </div>
 
-                        <div class="grid-sizer"></div>
-                        <?php 
+                             <div style="width:33%" class="box2">
+                                 @for($i=1;$i<=count($photos);$i=$i+3)
+                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="width:100%; margin-bottom: 12px"/>
+                                 
+                                  
+                                 @endfor
+                          </div>
 
-                            $i = 0;
+                             <div style="width:33%" class="box3">
+                                 @for($i=2;$i<=count($photos);$i=$i+3)
+                                     <img src="{{$photos[$i]->web}}" id="{{$i}}" style="width:100%; margin-bottom: 12px"/>                                  
+                                  @endfor
+                          </div>
 
-                            foreach ($photos as $photo):
-
-                            ?>
-
-
-                            <?php /*@if ($photo->height < $photo->width && !$photo->is_square()) 
-                                        @if ($i != 0 && $i%10==0) grid-item--width4 @else grid-item--width2 @endif @elseif ($i%10==0) grid-item--height4 @endif"><img class="lazy" src="{{$photo->active_image_url(false,true)}}" /></div> */ ?>
-
-                            
-                                <div class="grid-item 
-
-                                    @if ($photo->height < $photo->width) grid-item--width2 @endif"><img class="lazy" src="{{$photo->web}}" /></div>
-                             
-                            
-
-                            
-                                
-                            
-
-                            <?php $i++ ?>
-
-                        <?php endforeach;?>
-
-                                                
                     </div>
-                </div>
 
-                
+
+                    <div class="Img_wrapper">
+                      <!-- Swiper -->
+                      <div class="swiper mySwiper h-100">
+                        <div class="swiper-wrapper">
+                          @foreach($photos as $photo)
+                              <div class="swiper-slide">
+                                <img src="{{$photo->web}}"/>                                  
+                              </div>
+                              @endforeach
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                         <div class="swiper-pagination"></div>
+                      </div>
+                      <span id="closeModel">
+                         <i class="fa-solid fa-xmark"></i>
+                      </span>
+                    </div>
+
+
 
                 <div class="text-center" style="margin-top: 300px;">
                     <a href="/privacy">Privacy</a>
@@ -284,11 +331,49 @@ olark.identify('6935-124-10-4396');</script>
 
 
 <footer>
+
+         <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        keyboard: {
+          enabled: true,
+        },
+        //  pagination: {
+        //   el: ".swiper-pagination",
+        //   clickable: true,
+        // },
+      });
+    </script>
+
     <script>window.__theme = 'bs4';</script>
     
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <!-- load jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
    
+    <script>
+      $('img').click(function(){
+        setTimeout(() => {
+          $('.Img_wrapper').css('display','flex');
+        }, 200);
+        swiper.slideTo($(this).attr('id'), 0, false);
+      })
+      $('#closeModel').click(function(){
+        // fadeout
+        $('.Img_wrapper').fadeOut();
+        setTimeout(() => {
+          $('.Img_wrapper').css('display','none');
+        }, 200);
+      })
+    </script>
 
 
     
