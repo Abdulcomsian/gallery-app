@@ -18,6 +18,10 @@
           />
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+           <link rel="stylesheet" href="/css/latercam.css?v=4">
 <style>
     .grid-item { width: 200px; }
 .grid-item--width2 { width: 400px; }
@@ -105,12 +109,37 @@ body { font-family: sans-serif; }
 
 </style>
 	</head>
-	<body>
+	<body class="later">
+
+
+         <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-4">
+                            
+
+
+                        </div>
+
+                        <div class="laterbox col-lg-4 text-center">
+
+                            <a href="/"><img class="mt-4 later_logo" alt="Later Cam logo" src="https://s3.amazonaws.com/herman-cat/latercam.png"/></a>
+                            <h1 style="padding-bottom:40px;">Album title</h1>
+
+                            
+                        </div>
+
+                        <div class="col-lg-4"></div>
+
+                    </div>
+                </div>
+
+
         <div class="grid">
         <div class="grid-sizer"></div>
         @for($i=0;$i<=count($photos);$i++)
                  <div class="grid-item">
-                 <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" style="    padding: 20px 18px;width:100%; margin-bottom: 12px"/>
+                 <img src="{{$photos[$i]->web ?? ''}}" id="{{$i}}" style="    padding: 6px 9px;width:100%; margin-bottom: 12px"/>
                 </div>
             @endfor 
         </div>
@@ -135,6 +164,10 @@ body { font-family: sans-serif; }
                       </span>
                     </div>
 
+
+                    <div class="text-center" style="margin-top: 300px;">
+                    <a href="/privacy">Privacy</a>
+                </div>
 
        <script>
       // init Masonry
