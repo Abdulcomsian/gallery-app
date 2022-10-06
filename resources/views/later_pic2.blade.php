@@ -177,9 +177,9 @@ body { font-family: sans-serif; }
           columnWidth: '.grid-sizer'
         });
         // layout Masonry after each image loads
-        $grid.imagesLoaded().progress( function() {
-          $grid.masonry();
-        });  
+        // $grid.imagesLoaded().progress( function() {
+        //   $grid.masonry();
+        // });  
 
        </script>
 
