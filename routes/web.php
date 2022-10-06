@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('pics/{code}', [LaterController::class, 'pics']);
+Route::get('pics2/{code}', [LaterController::class, 'pics2']);
